@@ -13,28 +13,29 @@
   <body>
     <header>
       <a href="#" class="logo">Casanova.beau</a>
-
-      <nav>
-        <a href="#" class="active"> Home</a>
+      <nav id="navbar">
+        <a href="#" class="active">Home</a>
         <a href="#">Services</a>
         <a href="#">Skills</a>
         <a href="#">Education</a>
         <a href="#">Experience</a>
         <a href="#">Contact</a>
       </nav>
+      <div class="menu-toggle" id="menu-toggle">
+        <i class="fa fa-bars"></i>
+      </div>
     </header>
     <section class="home">
       <div class="home-img">
-        <img src="../main.png" alt="" />
+        <img src="../main.png" alt="Profile Picture" />
       </div>
       <div class="home-content">
         <h1>Hi, It's <span>Casanova</span></h1>
         <h3 class="typing-text">I'm a <span></span></h3>
         <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus labore
-          dolores esse. Odit similique doloribus tenetur doloremque, sunt
-          commodi in ipsa repudiandae debitis deleniti blanditiis quibusdam
-          quaerat neque asperiores ea.
+          Passionate about technology, creativity, and learning. I love building
+          things, capturing moments, and exploring new ideas. Let's connect and
+          create something amazing together!
         </p>
         <div class="social-icons">
           <a href="#"><i class="fa-brands fa-linkedin"></i></a>
@@ -50,5 +51,14 @@
         <a href="#" class="btn">Join Discord Server</a>
       </div>
     </section>
+    <script>
+      // Hamburger menu toggle for mobile
+      const menuToggle = document.getElementById("menu-toggle");
+      const navbar = document.getElementById("navbar");
+      menuToggle.addEventListener("click", () => {
+        navbar.classList.toggle("active");
+        menuToggle.classList.toggle("active");
+      });
+    </script>
   </body>
 </html>
