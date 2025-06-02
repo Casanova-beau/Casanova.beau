@@ -23,7 +23,7 @@ body {
       rgba(255, 255, 255, 0.85) 0%,
       rgba(220, 230, 255, 0.7) 100%
     ),
-    url("./background.png") no-repeat center center fixed;
+    url("./zerotwo.png") no-repeat center center fixed;
   background-size: cover;
   color: #232946;
   transition: background 0.5s;
