@@ -744,120 +744,62 @@ footer {
 /* ...existing main site styles above... */
 
 /* ANIME PAGE CSS - SCOPED TO .anime-page */
-.anime-page {
-  width: 100%;
-  min-height: 100vh;
-  background: linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.55) 0%,
-      rgba(230, 234, 255, 0.55) 100%
-    ),
-    url("../zertwo.png") no-repeat center center fixed;
-  background-size: cover;
-  color: #232946;
-  font-family: "Poppins", sans-serif;
-  padding-top: 90px;
-  margin: 0;
-}
-
-.anime-page header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 1rem 6%;
-  background: rgba(35, 41, 70, 0.92);
-  box-shadow: 0 4px 24px 0 #23294622;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 10;
-}
-
-.anime-page .logo {
-  font-size: 3rem;
-  color: #eebbc3;
-  font-weight: 800;
-  letter-spacing: 2px;
-  text-shadow: 0 2px 12px #eebbc344;
-  text-decoration: none;
-}
-
-.anime-page nav {
-  display: flex;
-  align-items: center;
-}
-
-.anime-page nav a {
-  font-size: 1.8rem;
-  color: #b8c1ec;
-  margin-left: 3rem;
-  font-weight: 500;
-  transition: 0.3s;
-  border-bottom: 3px solid transparent;
-  padding: 0.5rem 1rem;
-  letter-spacing: 1px;
-  border-radius: 4px;
-  background: transparent;
-  text-decoration: none;
-}
-
-.anime-page nav a.active,
-.anime-page nav a[aria-current="page"],
-.anime-page nav a:hover {
-  color: #232946;
-  border-bottom: 3px solid #eebbc3;
-  background: rgba(238, 187, 195, 0.13);
-  box-shadow: 0 2px 12px #eebbc333;
-}
 
 .anime-page main {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   justify-content: flex-start;
   min-height: 100vh;
   padding: 7rem 6% 5rem;
+  gap: 2.5rem;
+}
+
+.anime-page .home {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: transparent;
+  animation: fadeIn 1.2s;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 0;
+  padding: 0;
 }
 
 .anime-page .home-content {
   max-width: 540px;
-  background: rgba(255, 255, 255, 0.7);
-  border-radius: 2rem;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 1.5rem;
   box-shadow: 0 4px 24px #eebbc322;
-  padding: 3rem 2.5rem;
+  padding: 2.5rem 2rem;
   border: 1.5px solid #eebbc344;
-  margin: 4rem auto 2rem auto;
+  margin: 0 auto;
   position: relative;
   overflow: hidden;
   backdrop-filter: blur(4px);
+  transition: box-shadow 0.3s, background 0.3s;
 }
 
 .anime-page .home-content h1 {
-  font-size: 3.2rem;
+  font-size: 2.4rem;
   font-weight: 700;
   color: #232946;
   margin-bottom: 1.2rem;
   text-align: center;
-}
-
-.anime-page .home-content p {
-  font-size: 1.7rem;
-  color: #232946;
-  line-height: 1.7;
-  margin-bottom: 2.5rem;
-  text-align: center;
+  letter-spacing: 1px;
 }
 
 .anime-page .home-content ul {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   line-height: 2;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
   padding-left: 1.5rem;
 }
 
 .anime-page .home-content ul li {
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.7rem;
   color: #393e6c;
 }
 
@@ -865,96 +807,70 @@ footer {
   color: #eebbc3;
 }
 
-.anime-page .home-content a {
-  color: #81676b;
-  text-decoration: underline;
-  transition: color 0.2s;
-}
-
-.anime-page .home-content a:hover {
-  color: #b8c1ec;
-}
-
-.anime-page footer {
-  width: 100%;
-  background: rgba(35, 41, 70, 0.92);
-  color: #b8c1ec;
+.anime-page .home-content p {
+  font-size: 1.3rem;
+  color: #232946;
   text-align: center;
-  padding: 2rem 1rem 1.2rem 1rem;
-  position: relative;
-  z-index: 10;
-  box-shadow: 0 -2px 16px #23294622;
-  font-size: 1.5rem;
-  letter-spacing: 1px;
+  margin-top: 1.5rem;
 }
 
-.anime-page .footer-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.6rem;
+.anime-page section.home:not(:last-child) .home-content {
+  margin-bottom: 0;
 }
 
-.anime-page .footer-heart {
-  color: #eebbc3;
-  font-size: 1.3em;
-  animation: pulseHeart 1.5s infinite;
+.anime-page .home-content {
+  border-left: 8px solid #eebbc3;
+  border-right: 8px solid #b8c1ec;
 }
 
-@keyframes pulseHeart {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
+.anime-page .home-content h1::before {
+  content: "";
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
+  margin-right: 0.4em;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.anime-page .home-content[aria-label="Favorite Anime"] h1::before {
+  content: "⭐";
+  background: none;
+}
+.anime-page .home-content[aria-label="Ongoing Anime"] h1::before {
+  content: "⏳";
+  background: none;
+}
+.anime-page .home-content[aria-label="Watch List"] h1::before {
+  content: "📺";
+  background: none;
 }
 
-.anime-page .footer-rights {
-  font-size: 1.2rem;
-  color: #b8c1ecbb;
-  margin-top: 0.2rem;
-}
-
-/* Responsive */
+/* Responsive adjustments for anime lists */
 @media (max-width: 900px) {
   .anime-page main {
     padding: 7rem 2% 5rem;
+    gap: 1.5rem;
   }
   .anime-page .home-content {
     max-width: 100%;
-    padding: 2rem 0.8rem;
-  }
-  .anime-page footer {
-    font-size: 1.2rem;
-    padding: 1.2rem 0.5rem 0.8rem 0.5rem;
+    padding: 1.5rem 0.7rem;
+    border-left: 4px solid #eebbc3;
+    border-right: 4px solid #b8c1ec;
   }
 }
 
 @media (max-width: 600px) {
-  html {
-    font-size: 55%;
-  }
-  .anime-page .home-content h1 {
-    font-size: 2.2rem;
-  }
-  .anime-page .home-content {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 1rem 0.2rem;
-  }
-  .anime-page .footer-content {
-    font-size: 1rem;
-    gap: 0.2rem;
-  }
-}
-
-@media (max-width: 400px) {
   .anime-page .home-content h1 {
     font-size: 1.5rem;
   }
-  .anime-page footer {
-    font-size: 1rem;
-    padding: 0.8rem 0.2rem 0.5rem 0.2rem;
+  .anime-page .home-content ul {
+    font-size: 1.1rem;
+    padding-left: 1rem;
+  }
+  .anime-page .home-content {
+    padding: 1rem 0.2rem;
+    border-left: 2px solid #eebbc3;
+    border-right: 2px solid #b8c1ec;
   }
 }
