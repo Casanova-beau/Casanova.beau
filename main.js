@@ -11,12 +11,30 @@ if (menuToggle && navbar) {
 // Typing effect for the words
 const words = ["Introvert", "Developer", "Photographer", "Editor", "Learner"];
 let i = 0;
+let j = 0;
+let isDeleting = false;
 const span = document.querySelector(".typing-text span");
-function changeWord() {
-  if (span) {
-    span.textContent = words[i];
-    i = (i + 1) % words.length;
+
+function type() {
+  if (!span) return;
+  const current = words[i];
+  if (isDeleting) {
+    span.textContent = current.substring(0, j--);
+    if (j < 0) {
+      isDeleting = false;
+      i = (i + 1) % words.length;
+      setTimeout(type, 400);
+    } else {
+      setTimeout(type, 60);
+    }
+  } else {
+    span.textContent = current.substring(0, j++);
+    if (j > current.length) {
+      isDeleting = true;
+      setTimeout(type, 1200);
+    } else {
+      setTimeout(type, 120);
+    }
   }
 }
-changeWord();
-setInterval(changeWord, 2000);
+type();

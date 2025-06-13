@@ -16,10 +16,10 @@
     <meta name="theme-color" content="#232946" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/ico" href="favicon.ico" sizes="32x32" />
-    <link rel="shortcut icon" href="favicon.ico" />
-    <link rel="apple-touch-icon" href="favicon.ico" />
-
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png" />
+    <link rel="icon" type="image/png" sizes="128x128" href="favicon-128.png" />
+    <link rel="apple-touch-icon" href="favicon-128.png" />
     <!-- Open Graph / Facebook -->
     <meta property="og:title" content="Casanova Profile" />
     <meta
@@ -44,59 +44,42 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
+      media="all"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css" media="all" />
   </head>
   <body>
     <div class="bg-animated" aria-hidden="true"></div>
     <header>
-      <a href="#" class="logo" tabindex="0">Casanova.beau</a>
+      <a href="index.html" class="logo" tabindex="0">Casanova.beau</a>
       <nav id="navbar" aria-label="Main navigation">
-        <a href="#" class="active">Home</a>
-        <a
-          href="#"
-          aria-label="my anime list"
-          target="_blank"
-          rel="noopener noreferrer"
-          >My Anime List</a
-        >
-        <a
-          href="#"
-          aria-label="my anime list"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Skills</a
-        >
-        <a
-          href="#"
-          aria-label="my anime list"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Education</a
-        >
-        <a
-          href="#"
-          aria-label="my anime list"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Experience</a
-        >
-        <a
-          href="#"
-          aria-label="my anime list"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Contact</a
-        >
+        <a href="index.html" class="active" aria-current="page">Home</a>
+        <a href="pages/anime.html" aria-label="My Anime List">Anime</a>
+        <a href="#skills" aria-label="Skills">Skills</a>
+        <a href="#education" aria-label="Education">Education</a>
+        <a href="#experience" aria-label="Experience">Experience</a>
+        <a href="#contact" aria-label="Contact">Contact</a>
       </nav>
-      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        aria-label="Toggle menu"
+        aria-controls="navbar"
+        aria-expanded="false"
+      >
         <i class="fa fa-bars" aria-hidden="true"></i>
       </button>
     </header>
-    <main>
+    <main id="main-content">
       <section class="home" aria-label="Introduction">
         <div class="home-img">
-          <img src="main.png" alt="Casanova Profile Picture" />
+          <img
+            src="main.png"
+            alt="Casanova Profile Picture"
+            width="320"
+            height="320"
+            loading="lazy"
+          />
           <div class="status-badge" title="Online">
             <span class="pulse"></span>
             <span class="dot"></span>
@@ -234,6 +217,6 @@
         <span class="footer-rights">| &copy; 2025 All rights reserved.</span>
       </div>
     </footer>
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
   </body>
 </html>
