@@ -61,7 +61,7 @@ header {
   left: 0;
   width: 100%;
   padding: 1rem 6%;
-  background: rgba(35, 41, 70, 0.92);
+  background: rgb(0 0 0 / 0.5);
   box-shadow: 0 4px 24px 0 #23294622;
   display: flex;
   justify-content: space-between;
@@ -181,10 +181,23 @@ nav a.active {
 }
 
 section {
-  min-height: 100vh;
-  padding: 7rem 6% 5rem;
+  min-height: 20vh;
+  padding: 2rem 2vw 2rem 2vw;
   position: relative;
   z-index: 2;
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  section {
+    padding: 6rem 2vw 3rem 2vw;
+  }
+}
+
+@media (max-width: 600px) {
+  section {
+    padding: 4rem 1vw 2rem 1vw;
+  }
 }
 
 .home {
@@ -336,7 +349,7 @@ section {
 
 .home-content {
   max-width: 540px;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0);
   border-radius: 2rem;
   box-shadow: 0 4px 24px #eebbc322;
   padding: 3rem 2.5rem;
@@ -351,6 +364,20 @@ section {
 .home-content:focus-within,
 .home-content:hover {
   background: rgba(255, 255, 255, 0.92);
+  border-color: #eebbc3;
+  transform: translateY(-2px);
+  transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+  filter: drop-shadow(0 4px 16px #eebbc3aa);
+  backdrop-filter: blur(6px);
+  border-radius: 2rem;
+  border: 2px solid #eebbc3;
+  animation: none;
+  transform: translateY(-2px) scale(1.02);
+  background-clip: padding-box;
+  backdrop-filter: blur(8px);
+  filter: drop-shadow(0 4px 16px #eebbc3aa);
+  border-radius: 2rem;
+  border: 2px solid #eebbc3;
   box-shadow: 0 8px 32px #eebbc399, 0 0 0 8px #b8c1ec22;
 }
 
@@ -381,7 +408,6 @@ span {
   background: transparent;
 }
 
-/* --- FIX: Only keep one .typing-text style, and make it specific --- */
 .home-content h2.typing-text {
   font-size: 2.5rem;
   font-weight: 600;
@@ -394,9 +420,6 @@ span {
   animation: fadeInUp 1.2s 0.4s both;
 }
 
-/* Remove the less-specific .typing-text rule to avoid override issues */
-
-/* Typing effect span and cursor */
 .typing-text span {
   color: #eebbc3;
   font-weight: 700;
@@ -714,163 +737,150 @@ footer {
   }
 }
 
-/* Skip Link Styles */
-.skip-link {
-  position: flex;
-  left: 16px;
-  top: 16px;
-  background: #eebbc3;
-  color: #232946;
-  padding: 0.8em 1.5em;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 1.4rem;
-  z-index: 1000;
-  transform: translateY(-120%);
-  transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 2px 8px #23294622;
-  text-decoration: none;
-  outline: none;
-  border: none;
+/* Anime Float Icon - Attractive, animated, and on-theme */
+.anime-float-icon {
+  display: inline-block;
+  font-size: 4.2rem;
+  align-items: center;
+  margin-bottom: 1.2rem;
+  filter: drop-shadow(0 4px 16px #eebbc388);
+  animation: animeFloat 2.8s ease-in-out infinite alternate;
+  transition: transform 0.3s, filter 0.3s;
+  cursor: pointer;
+  user-select: none;
+  will-change: transform;
 }
 
-/* Show skip link when focused (keyboard navigation) */
-.skip-link:focus {
-  transform: translateY(0);
-  box-shadow: 0 4px 16px #eebbc344;
-  outline: 2px solid #b8c1ec;
+.anime-float-icon:hover,
+.anime-float-icon:focus-visible {
+  transform: scale(1.18) rotate(-8deg);
+  filter: drop-shadow(0 8px 32px #b8c1ecbb);
 }
 
-/* ...existing main site styles above... */
-
-/* ANIME PAGE CSS - SCOPED TO .anime-page */
+@keyframes animeFloat {
+  0% {
+    transform: translateY(0) scale(1) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(-18px) scale(1.08) rotate(6deg);
+  }
+  100% {
+    transform: translateY(0) scale(1) rotate(-4deg);
+  }
+}
+/* --------------------------------Anime Page Only Styles----------------------------- */
 
 .anime-page main {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: flex-start;
-  min-height: 100vh;
-  padding: 7rem 6% 5rem;
-  gap: 2.5rem;
-}
-
-.anime-page .home {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
   background: transparent;
-  animation: fadeIn 1.2s;
-  position: relative;
-  z-index: 2;
-  margin-bottom: 0;
-  padding: 0;
+  border-radius: 2.5rem;
+  box-shadow: none;
+  padding: 3rem 2rem 2rem 2rem;
+  margin: 3rem auto 2rem auto;
+  max-width: 900px;
+  animation: fadeInUp 1.2s both;
+  font-size: 1.4rem;
 }
 
 .anime-page .home-content {
-  max-width: 540px;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.85);
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  margin-bottom: 2.5rem;
   border-radius: 1.5rem;
-  box-shadow: 0 4px 24px #eebbc322;
-  padding: 2.5rem 2rem;
-  border: 1.5px solid #eebbc344;
-  margin: 0 auto;
-  position: relative;
-  overflow: hidden;
-  backdrop-filter: blur(4px);
+  padding: 2rem 1.5rem;
   transition: box-shadow 0.3s, background 0.3s;
+  font-size: 1.2rem;
 }
 
-.anime-page .home-content h1 {
-  font-size: 2.4rem;
-  font-weight: 700;
+.anime-page .home-content:hover {
+  box-shadow: none;
+  background: transparent;
+}
+
+.anime-page h1 {
+  font-size: 2rem;
   color: #232946;
   margin-bottom: 1.2rem;
-  text-align: center;
   letter-spacing: 1px;
+  text-shadow: 0 2px 12px #b8c1ec22;
 }
 
-.anime-page .home-content ul {
-  font-size: 1.5rem;
-  line-height: 2;
-  margin-bottom: 1.5rem;
-  padding-left: 1.5rem;
+.anime-page ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  justify-content: flex-start;
 }
 
-.anime-page .home-content ul li {
-  margin-bottom: 0.7rem;
-  color: #393e6c;
-}
-
-.anime-page .home-content ul li strong {
-  color: #eebbc3;
-}
-
-.anime-page .home-content p {
-  font-size: 1.3rem;
+.anime-page ul li {
+  background: rgba(238, 187, 195, 0.18);
   color: #232946;
+  font-weight: 600;
+  padding: 1.2rem 2rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 12px #b8c1ec22;
+  font-size: 1.15rem;
+  letter-spacing: 0.5px;
+  border: 1.5px solid #ffa7b4c4;
+  transition: background 0.3s, color 0.3s, transform 0.2s, box-shadow 0.3s,
+    border 0.3s;
+  cursor: pointer;
+  min-width: 120px;
   text-align: center;
-  margin-top: 1.5rem;
+  backdrop-filter: blur(2px);
 }
 
-.anime-page section.home:not(:last-child) .home-content {
-  margin-bottom: 0;
+.anime-page ul li:hover {
+  background: rgba(184, 193, 236, 0.22);
+  color: #232946;
+  border: 1.5px solid #eebbc3;
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 4px 24px #b8c1ec44;
 }
 
-.anime-page .home-content {
-  border-left: 8px solid #eebbc3;
-  border-right: 8px solid #b8c1ec;
+.anime-page p {
+  color: #393e6c;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  opacity: 0.9;
+  text-align: center;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+  background: rgba(255, 255, 255, 0.171);
+  padding: 1.2rem 1.5rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 12px #b8c1ec22;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+  backdrop-filter: blur(2px);
+  word-break: break-all;
 }
 
-.anime-page .home-content h1::before {
-  content: "";
-  display: inline-block;
-  width: 1.2em;
-  height: 1.2em;
-  margin-right: 0.4em;
-  vertical-align: middle;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-.anime-page .home-content[aria-label="Favorite Anime"] h1::before {
-  content: "⭐";
-  background: none;
-}
-.anime-page .home-content[aria-label="Ongoing Anime"] h1::before {
-  content: "⏳";
-  background: none;
-}
-.anime-page .home-content[aria-label="Watch List"] h1::before {
-  content: "📺";
-  background: none;
-}
-
-/* Responsive adjustments for anime lists */
-@media (max-width: 900px) {
+/* Responsive for anime page */
+@media (max-width: 700px) {
   .anime-page main {
-    padding: 7rem 2% 5rem;
-    gap: 1.5rem;
+    padding: 1.2rem 0.2rem;
+    max-width: 98vw;
+    font-size: 1.2rem;
   }
   .anime-page .home-content {
-    max-width: 100%;
-    padding: 1.5rem 0.7rem;
-    border-left: 4px solid #eebbc3;
-    border-right: 4px solid #b8c1ec;
+    padding: 1.2rem 0.5rem;
+    font-size: 1rem;
   }
-}
-
-@media (max-width: 600px) {
-  .anime-page .home-content h1 {
-    font-size: 1.5rem;
+  .anime-page ul {
+    gap: 0.6rem;
   }
-  .anime-page .home-content ul {
-    font-size: 1.1rem;
-    padding-left: 1rem;
+  .anime-page ul li {
+    font-size: 0.95rem;
+    padding: 0.5rem 0.8rem;
+    min-width: 70px;
   }
-  .anime-page .home-content {
-    padding: 1rem 0.2rem;
-    border-left: 2px solid #eebbc3;
-    border-right: 2px solid #b8c1ec;
+  .anime-page h1 {
+    font-size: 1.4rem;
+  }
+  .anime-page p {
+    font-size: 0.95rem;
   }
 }
