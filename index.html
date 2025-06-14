@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Casanova Profile</title>
+    <title>Casanova.beau | Developer, Photographer, Editor, Learner</title>
     <meta
       name="description"
       content="Casanova.beau - Developer, Photographer, Editor, and Learner. Explore my creative portfolio and connect with me!"
@@ -16,18 +16,20 @@
     <meta name="theme-color" content="#232946" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../favicon-64.png" />
-    <link rel="icon" type="image/png" href="../favicon-64.png" />
+    <link rel="icon" type="image/png" sizes="64x64" href="../favicon-64.png" />
     <link
       rel="icon"
       type="image/png"
-      sizes="200x200"
+      sizes="128x128"
       href="../favicon-128.png"
     />
     <link rel="apple-touch-icon" href="../favicon-128.png" />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:title" content="Casanova Profile" />
+    <meta
+      property="og:title"
+      content="Casanova.beau | Developer, Photographer, Editor, Learner"
+    />
     <meta
       property="og:description"
       content="Casanova.beau - Developer, Photographer, Editor, and Learner. Explore my creative portfolio and connect with me!"
@@ -38,171 +40,218 @@
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Casanova Profile" />
+    <meta
+      name="twitter:title"
+      content="Casanova.beau | Developer, Photographer, Editor, Learner"
+    />
     <meta
       name="twitter:description"
       content="Casanova.beau - Developer, Photographer, Editor, and Learner. Explore my creative portfolio and connect with me!"
     />
     <meta name="twitter:image" content="favicon.png" />
 
-    <!-- Font Awesome CDN (try jsDelivr if CDNJS fails) -->
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Casanova.beau",
+        "url": "https://yourdomain.com/",
+        "sameAs": [
+          "https://github.com/Casanova-beau",
+          "https://www.linkedin.com/in/sahil-rajak-848899242/",
+          "https://instagram.com/casanova.beau"
+        ],
+        "jobTitle": "Developer, Photographer, Editor"
+      }
+    </script>
+
+    <!-- Font Awesome CDN -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
-      <a href="index.html" class="logo" tabindex="0">Casanova.beau</a>
+      <a
+        href="index.html"
+        class="logo"
+        tabindex="0"
+        aria-label="Casanova.beau Home"
+        >Casanova.beau</a
+      >
       <nav id="navbar" aria-label="Main navigation">
-        <a href="index.html" class="active" aria-current="page">Home</a>
-        <a href="pages/anime.html" aria-label="My Anime List">Anime</a>
-        <a href="pages/games.html" aria-label="Skills">Games</a>
-        <a href="#education" aria-label="Education">Education</a>
-        <a href="#experience" aria-label="Experience">Experience</a>
-        <a href="#contact" aria-label="Contact">Contact</a>
+        <ul>
+          <li>
+            <a href="index.html" class="active" aria-current="page">Home</a>
+          </li>
+          <li>
+            <a href="pages/anime.html" aria-label="My Anime List">Anime</a>
+          </li>
+          <li><a href="pages/games.html" aria-label="Games">Games</a></li>
+          <li><a href="#education" aria-label="Education">Education</a></li>
+          <li><a href="#experience" aria-label="Experience">Experience</a></li>
+          <li><a href="#contact" aria-label="Contact">Contact</a></li>
+        </ul>
       </nav>
       <button
         class="menu-toggle"
         id="menu-toggle"
-        aria-label="Toggle menu"
+        aria-label="Toggle navigation menu"
         aria-controls="navbar"
         aria-expanded="false"
+        type="button"
       >
         <i class="fa fa-bars" aria-hidden="true"></i>
       </button>
     </header>
-    <main id="main-content">
+    <main id="main-content" role="main">
       <section class="home" aria-label="Introduction">
         <div class="home-img">
           <img
             src="main.png"
-            alt="Casanova Profile Picture"
+            alt="Casanova.beau profile picture"
             width="320"
             height="320"
             loading="lazy"
           />
           <div class="status-badge" title="Online">
-            <span class="pulse"></span>
-            <span class="dot"></span>
+            <span class="pulse" aria-hidden="true"></span>
+            <span class="dot" aria-hidden="true"></span>
           </div>
         </div>
         <div class="home-content">
-          <h1>Hi, It's <span>Casanova</span></h1>
-          <h2 class="typing-text">I'm a <span></span></h2>
+          <h1>Hi, I'm <span>Casanova</span></h1>
+          <h2 class="typing-text" aria-live="polite">I'm a <span></span></h2>
           <p>
             Passionate about technology, creativity, and learning. I love
             building things, capturing moments, and exploring new ideas. Let's
             connect and create something amazing together!
           </p>
-
-          <div class="social-icons" aria-label="Social links">
-            <a
-              href="https://www.linkedin.com/in/sahil-rajak-848899242/"
-              aria-label="LinkedIn"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="fa-brands fa-linkedin"></i>
-            </a>
-            <a
-              href="https://github.com/Casanova-beau"
-              aria-label="GitHub"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="fa-brands fa-github"></i>
-            </a>
-            <a
-              href="https://x.com/casanova_beau"
-              aria-label="X (Twitter)"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="fa-brands fa-x-twitter"></i>
-            </a>
-            <a
-              href="https://instagram.com/casanova.beau"
-              aria-label="Instagram"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a
-              href="https://twitch.tv/Casanova_beau"
-              aria-label="Twitch"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="fa-brands fa-twitch"></i>
-            </a>
-            <a
-              href="https://discord.com/"
-              aria-label="Discord"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="fa-brands fa-discord"></i>
-            </a>
-            <a
-              href="https://in.pinterest.com/casanova_beau"
-              aria-label="Pinterest"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="fa-brands fa-pinterest"></i>
-            </a>
-            <a
-              href="https://t.snapchat.com/l532dKqD"
-              aria-label="Snapchat"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="fa-brands fa-snapchat"></i>
-            </a>
-            <a
-              href="https://open.spotify.com/user/8vhewu7y93ygxk8zv0i1weraf"
-              aria-label="Spotify"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="fa-brands fa-spotify"></i>
-            </a>
-            <a
-              href="https://www.epicgames.com/"
-              aria-label="Epic Games"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="fa-solid fa-gamepad"></i>
-            </a>
-            <a
-              href="https://steamcommunity.com/profiles/76561199828016752"
-              aria-label="Steam"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="fa-brands fa-steam"></i>
-            </a>
-            <a
-              href="https://www.threads.net/@__.sahilllllll.__"
-              aria-label="Threads"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="fa-brands fa-threads"></i>
-            </a>
-          </div>
+          <nav class="social-icons" aria-label="Social links">
+            <ul>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/sahil-rajak-848899242/"
+                  aria-label="LinkedIn"
+                  target="_blank"
+                  rel="noopener me"
+                  ><i class="fa-brands fa-linkedin"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/Casanova-beau"
+                  aria-label="GitHub"
+                  target="_blank"
+                  rel="noopener me"
+                  ><i class="fa-brands fa-github"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://x.com/casanova_beau"
+                  aria-label="X (Twitter)"
+                  target="_blank"
+                  rel="noopener"
+                  ><i class="fa-brands fa-x-twitter"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://instagram.com/casanova.beau"
+                  aria-label="Instagram"
+                  target="_blank"
+                  rel="noopener"
+                  ><i class="fa-brands fa-instagram"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://twitch.tv/Casanova_beau"
+                  aria-label="Twitch"
+                  target="_blank"
+                  rel="noopener"
+                  ><i class="fa-brands fa-twitch"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://discord.com/"
+                  aria-label="Discord"
+                  target="_blank"
+                  rel="noopener"
+                  ><i class="fa-brands fa-discord"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://in.pinterest.com/casanova_beau"
+                  aria-label="Pinterest"
+                  target="_blank"
+                  rel="noopener"
+                  ><i class="fa-brands fa-pinterest"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://t.snapchat.com/l532dKqD"
+                  aria-label="Snapchat"
+                  target="_blank"
+                  rel="noopener"
+                  ><i class="fa-brands fa-snapchat"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://open.spotify.com/user/8vhewu7y93ygxk8zv0i1weraf"
+                  aria-label="Spotify"
+                  target="_blank"
+                  rel="noopener"
+                  ><i class="fa-brands fa-spotify"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.epicgames.com/"
+                  aria-label="Epic Games"
+                  target="_blank"
+                  rel="noopener"
+                  ><i class="fa-solid fa-gamepad"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://steamcommunity.com/profiles/76561199828016752"
+                  aria-label="Steam"
+                  target="_blank"
+                  rel="noopener"
+                  ><i class="fa-brands fa-steam"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.threads.net/@__.sahilllllll.__"
+                  aria-label="Threads"
+                  target="_blank"
+                  rel="noopener"
+                  ><i class="fa-brands fa-threads"></i
+                ></a>
+              </li>
+            </ul>
+          </nav>
           <a
             href="https://discord.gg/RVGeC59FBu"
             class="btn"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener"
             ><span>Join Discord Server</span></a
           >
-          <!--https://mixi.social/@casanova_beau-->
         </div>
       </section>
       <div class="scroll-down" aria-hidden="true">
@@ -211,7 +260,7 @@
         <span></span>
       </div>
     </main>
-    <footer>
+    <footer role="contentinfo">
       <div class="footer-content">
         <span>
           <i class="fa-solid fa-code" aria-hidden="true"></i>
@@ -219,6 +268,7 @@
           <a
             href="https://github.com/Casanova-beau"
             target="_blank"
+            rel="noopener"
             style="color: #eebbc3; text-decoration: none"
             >Casanova.beau</a
           >
