@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Games | Casanova.beau</title>
+    <meta
+      name="description"
+      content="Play a simple number guessing game on Casanova.beau's website!"
+    />
+    <meta name="author" content="Casanova.beau" />
+    <link rel="icon" type="image/x-icon" href="../favicon-64.png" />
+    <link rel="icon" type="image/png" href="../favicon-64.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="200x200"
+      href="../favicon-128.png"
+    />
+    <link rel="apple-touch-icon" href="../favicon-128.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <div class="bg-animated" aria-hidden="true"></div>
+    <header>
+      <a href="../index.html" class="logo" tabindex="0">Casanova.beau</a>
+      <nav id="navbar" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="anime.html">Anime</a>
+        <a href="games.html" class="active" aria-current="page">Games</a>
+        <a href="../index.html#education">Education</a>
+        <a href="../index.html#experience">Experience</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        aria-label="Toggle menu"
+        aria-controls="navbar"
+        aria-expanded="false"
+      >
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </button>
+    </header>
+    <main>
+      <section class="home" aria-label="Games">
+        <div class="game-card" aria-labelledby="guess-game-title">
+          <h1 id="guess-game-title">
+            <i class="fa-solid fa-gamepad" style="color: #ffd6e0"></i>
+            Number Guessing Game
+          </h1>
+          <p>
+            Guess a number between <b>1</b> and <b>10</b>!<br />
+            Can you get it right?
+          </p>
+          <input
+            type="number"
+            id="guess-input"
+            min="1"
+            max="10"
+            placeholder="Your guess"
+            aria-label="Enter your guess"
+          />
+          <div class="game-btn-row">
+            <button class="game-btn" id="guess-btn">
+              <i class="fa-solid fa-check"></i> Guess
+            </button>
+            <button class="game-btn" id="reset-btn">
+              <i class="fa-solid fa-rotate-right"></i> Restart
+            </button>
+          </div>
+          <div class="game-result" id="game-result" aria-live="polite"></div>
+        </div>
+
+        <!-- Rock Paper Scissors Game -->
+        <div class="game-card" aria-labelledby="rps-game-title">
+          <h1 id="rps-game-title">
+            <i class="fa-solid fa-hand-scissors" style="color: #ffd6e0"></i>
+            Rock, Paper, Scissors
+          </h1>
+          <p>Choose your move:</p>
+          <div class="game-btn-row">
+            <button class="game-btn" id="rps-rock">
+              <i class="fa-solid fa-hand-back-fist"></i> Rock
+            </button>
+            <button class="game-btn" id="rps-paper">
+              <i class="fa-solid fa-hand"></i> Paper
+            </button>
+            <button class="game-btn" id="rps-scissors">
+              <i class="fa-solid fa-hand-scissors"></i> Scissors
+            </button>
+          </div>
+          <div class="game-result" id="rps-result" aria-live="polite"></div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-content">
+        <span>
+          <i class="fa-solid fa-code" aria-hidden="true"></i>
+          Made with <span class="footer-heart" aria-label="love">❤</span> by
+          <a
+            href="https://github.com/Casanova-beau"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer-link"
+            >Casanova.beau</a
+          >
+        </span>
+        <span class="footer-rights">| &copy; 2025 All rights reserved.</span>
+      </div>
+    </footer>
+    <script src="../main.js" defer></script>
+  </body>
+</html>

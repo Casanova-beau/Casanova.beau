@@ -768,8 +768,8 @@ footer {
     transform: translateY(0) scale(1) rotate(-4deg);
   }
 }
-/* --------------------------------Anime Page Only Styles----------------------------- */
 
+/* --- Anime Page Styles --- */
 .anime-page main {
   background: transparent;
   border-radius: 2.5rem;
@@ -883,4 +883,275 @@ footer {
   .anime-page p {
     font-size: 0.95rem;
   }
+}
+/* --- End Anime Page Styles --- */
+
+/* --- Enhanced Game Card Styles --- */
+.game-card {
+  max-width: 480px;
+  height: 350px; /* Fixed height for all cards */
+  margin: 4rem auto 2.5rem auto;
+  padding: 3rem 2.2rem 2.5rem 2.2rem;
+  background: rgba(35, 41, 70, 0.95);
+  border-radius: 2.5rem;
+  box-shadow: 0 12px 40px 0 rgba(184, 193, 236, 0.25), 0 4px 16px #eebbc355;
+  text-align: center;
+  border: 3px solid #eebbc3;
+  position: relative;
+  animation: popIn 0.8s;
+  backdrop-filter: blur(18px);
+  transition: box-shadow 0.3s, background 0.3s, border 0.3s;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertical center */
+  align-items: center; /* Horizontal center */
+  width: 100%;
+  max-width: 480px;
+  min-width: 320px;
+}
+
+.game-card::before {
+  content: "";
+  position: absolute;
+  inset: -18px;
+  border-radius: 3.2rem;
+  background: linear-gradient(135deg, #eebbc366 0%, #b8c1ec44 100%);
+  z-index: 0;
+  pointer-events: none;
+  filter: blur(20px);
+  opacity: 0.85;
+  animation: cardGlow 6s ease-in-out infinite alternate;
+}
+
+@keyframes cardGlow {
+  0% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.game-card h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1.2rem;
+  color: #ffd6e0;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 18px #eebbc399;
+  position: relative;
+  z-index: 1;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.game-card h1 i {
+  font-size: 2.2rem;
+  filter: drop-shadow(0 2px 8px #ffd6e0cc);
+  animation: floatIcon 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes floatIcon {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px) scale(1.08);
+  }
+}
+
+.game-card p {
+  color: #b8c1ec;
+  margin-bottom: 2.2rem;
+  font-size: 1.32rem;
+  position: relative;
+  z-index: 1;
+  font-weight: 500;
+  text-shadow: 0 2px 8px #b8c1ec22;
+}
+
+.game-btn-row {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.2rem;
+  flex-wrap: wrap;
+  z-index: 1;
+  position: relative;
+}
+
+.game-btn {
+  padding: 1.1rem 2.8rem;
+  font-size: 1.28rem;
+  border: none;
+  border-radius: 1.5rem;
+  background: linear-gradient(100deg, #ffd6e0 0%, #eebbc3 100%);
+  color: #232946;
+  cursor: pointer;
+  font-weight: 900;
+  letter-spacing: 0.9px;
+  box-shadow: 0 8px 32px 0 #eebbc355, 0 0 0 2px #ffd6e0aa;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: background 0.25s cubic-bezier(0.4, 2, 0.6, 1), color 0.2s,
+    box-shadow 0.25s, transform 0.18s;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.game-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 1.5rem;
+  padding: 2px;
+  background: linear-gradient(120deg, #ffd6e0, #eebbc3, #b8c1ec, #ffd6e0);
+  background-size: 200% 200%;
+  animation: btnGlow 2.5s linear infinite;
+  z-index: 0;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+@keyframes btnGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.game-btn:hover,
+.game-btn:focus-visible {
+  background: linear-gradient(100deg, #eebbc3 0%, #ffd6e0 100%);
+  color: #232946;
+  transform: translateY(-4px) scale(1.09);
+  box-shadow: 0 16px 48px #ffd6e0cc, 0 0 0 8px #eebbc3aa;
+  outline: none;
+}
+
+.game-btn:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 8px #eebbc355;
+}
+
+.game-result {
+  margin-top: 2.2rem;
+  font-weight: bold;
+  font-size: 1.32rem;
+  min-height: 2.2em;
+  color: #ffd6e0;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 10px #b8c1ec44;
+  position: relative;
+  z-index: 1;
+}
+
+#guess-input {
+  padding: 1rem 1.7rem;
+  border-radius: 1.2rem;
+  border: 2.5px solid #eebbc3;
+  font-size: 1.25rem;
+  width: 220px;
+  margin-bottom: 1.2rem;
+  background: rgba(35, 41, 70, 0.97);
+  color: #fff;
+  outline: none;
+  box-shadow: 0 2px 12px #b8c1ec33;
+  transition: border 0.2s, box-shadow 0.2s;
+  position: relative;
+  z-index: 1;
+  font-weight: 600;
+  text-align: center;
+}
+
+#guess-input:focus {
+  border: 3px solid #ffd6e0;
+  box-shadow: 0 0 0 5px #ffd6e055;
+}
+
+/* --- Game Divider --- */
+.game-divider {
+  width: 100%;
+  max-width: 500px;
+  margin: 2.5rem auto;
+  border-top: 2px dashed #b8c1ec55;
+  opacity: 0.7;
+  border-radius: 2px;
+  box-shadow: 0 2px 12px #b8c1ec22;
+}
+
+/* --- Spacing between game cards --- */
+.game-card + .game-card {
+  margin-top: 3rem;
+}
+
+/* --- Responsive styles --- */
+@media (max-width: 700px) {
+  .game-card {
+    max-width: 98vw;
+    height: 370px;
+    min-height: 290px;
+    margin: 2.2rem auto 1.5rem auto;
+    padding: 1.5rem 0.7rem 1.5rem 0.7rem;
+    border-radius: 1.5rem;
+  }
+  .game-card h1 {
+    font-size: 1.5rem;
+  }
+  .game-card p {
+    font-size: 1rem;
+  }
+  #guess-input {
+    font-size: 1rem;
+    width: 90px;
+    padding: 0.5rem 0.7rem;
+  }
+  .game-btn {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+  .game-result {
+    font-size: 1rem;
+    margin-top: 1.2rem;
+  }
+  .game-btn-row {
+    gap: 0.7rem;
+  }
+}
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.7) rotate(-10deg);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+/* Sticky footer layout */
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main {
+  flex: 1 0 auto;
+}
+footer {
+  flex-shrink: 0;
 }
