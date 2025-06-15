@@ -299,7 +299,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8rem;
+  gap: 0rem;
   background: transparent;
   animation: fadeIn 1.2s;
   position: relative;
